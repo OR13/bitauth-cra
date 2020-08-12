@@ -2,25 +2,16 @@ import React from "react";
 import logo from "./logo.svg";
 import "./App.css";
 
-import { instantiateSecp256k1 } from "@bitauth/libauth";
+import { instantiateSecp256k1, hexToBin } from "@bitauth/libauth";
 
-const pubkey = new Uint8Array(
-  Buffer.from(
-    "f10d00bd9560d70898651d5f984e3b58b11d334efafee1ce9ce17afd36ecc3e2affc6446f0e25989fec1cc69abcdd02da1bc6b2744f265c99975beac4156daf2",
-    "hex"
-  )
+const pubkey = hexToBin(
+  "f10d00bd9560d70898651d5f984e3b58b11d334efafee1ce9ce17afd36ecc3e2affc6446f0e25989fec1cc69abcdd02da1bc6b2744f265c99975beac4156daf2"
 );
-const msgHash = new Uint8Array(
-  Buffer.from(
-    "cc8cbf34b5a24ad1562e0b6f9870a8d376aea8fc53d9fb3fc4485b41fbf464ec",
-    "hex"
-  )
+const msgHash = hexToBin(
+  "cc8cbf34b5a24ad1562e0b6f9870a8d376aea8fc53d9fb3fc4485b41fbf464ec"
 );
-const sig = new Uint8Array(
-  Buffer.from(
-    "92c3f7c6981fa678559ada4d179f91b19083ab8253cd7842dec969f2533fbb2282fe69799d7e59ed47f001ad08fcf2e38a7ccfe5a8957cf602882c9061860fe7",
-    "hex"
-  )
+const sig = hexToBin(
+  "92c3f7c6981fa678559ada4d179f91b19083ab8253cd7842dec969f2533fbb2282fe69799d7e59ed47f001ad08fcf2e38a7ccfe5a8957cf602882c9061860fe7"
 );
 
 (async () => {
